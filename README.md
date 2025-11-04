@@ -48,4 +48,4 @@ The following software is required to run this project:
 
 ## 🎓 Academic Context
 
-This project serves as the practical implementation of the models and concepts being developed for an upcoming B.Sc. engineering thesis *"Digital twin of the continuous laboratory process"* at **AGH**. The model and its identification methods are being verified and validated using measurement data collected from a real-world laboratory rig.
+This project serves as the practical implementation of the models and concepts being developed for an upcoming B.Sc. engineering thesis *"Digital twin of the continuous laboratory process"* at **AGH University of Krakow**. The model and its identification methods are being verified and validated using measurement data collected from a real-world laboratory rig.
