@@ -16,8 +16,11 @@ This allows for the analysis of the trade-off between model-fit accuracy and its
 
 ## 🛠️ Repository Contents
 
+* **`DT_online.slx`**
+    * The online Simulink model implementing the dynamics of the tank cascade process.
+
 * **`DT.slx`**
-    * The main Simulink model implementing the dynamics of the tank cascade process. This is the core Digital Twin model.
+    * The offline Simulink model implementing the dynamics of the tank cascade process.
 
 * **`DT_app.mlapp`**
     * A MATLAB App Designer application that serves as the HMI (Human-Machine Interface) for visualization and control. It allows for real-time interaction with the Digital Twin.
@@ -31,8 +34,8 @@ This allows for the analysis of the trade-off between model-fit accuracy and its
 ## ⚙️ Requirements
 
 The following software is required to run this project:
-
-* **Matlab 2024a** (or newer)
+* **Matlab 2025b** (or newer) - for an online version
+* **Matlab 2024a** (or newer) - for an offline version
 * **Simulink**
 * **Simulink Desktop Real-Time**
 * **Simulink Industrial Communication**
