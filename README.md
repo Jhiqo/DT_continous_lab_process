@@ -18,7 +18,7 @@ This allows for the analysis of the trade-off between model-fit accuracy and its
 
 The project is organized into the following modules:
 
-### `01_PLC_Control`
+### `01_PLC_control`
 Contains the source code for the industrial controller (IDEC FC6A) managing the physical rig and communication.
 * **`PLC_Project_File`**: The original ladder logic project file implementing data acquisition, scaling, and Modbus TCP/IP communication server.
 * **`Modbus_Register_Map.pdf`**: Documentation of the memory map used for data exchange between the physical PLC and the Digital Twin.
@@ -29,13 +29,13 @@ The core simulation models.
 * **`DT_offline.slx`**: standalone simulation model for offline testing and algorithm development.
 * **`macierze_do_modelu.mat`**: data file containing initialization parameters, state-space matrices, and physical constants required for the simulations.
 
-### `03_Analysis_Scripts`
+### `03_analysis_scripts`
 MATLAB scripts demonstrating the mathematical rigor of the project (Identification & Validation).
 * **`identyfikacjaParametrow.m`**: implementation of the **Grey-box identification** method based on Torricelli's law. It uses the Trust Region Reflective algorithm to minimize the cost function (eq. 2.2 in the thesis).
 * **`analizaStatystycznaBledow.m`**: script performing statistical validation of the model. It generates error histograms, fits normal distribution curves, and calculates **kurtosis** to demonstrate the non-Gaussian nature of measurement errors (quantization error dominance).
 * **`analizaHisterezy.m`**: data processing script used to separate opening/closing cycles for valve R2, compensating for mechanical hysteresis.
 
-### `04_HMI_Visualization`
+### `04_HMI_visualization`
 * **`DT_app.mlapp`**: a MATLAB App Designer application serving as the Human-Machine Interface. It provides real-time visualization of the process state and allows for control mode switching (Monitor/Control).
 
 ## ⚙️ Requirements
