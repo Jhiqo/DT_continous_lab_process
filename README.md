@@ -14,22 +14,29 @@ A key research aspect of this project, included in the repository, is the **mode
 
 This allows for the analysis of the trade-off between model-fit accuracy and its generalizability and physical interpretability, which is crucial for educational applications.
 
-## 🛠️ Repository Contents
+## 📂 Repository Structure
 
-* **`DT_online.slx`**
-    * The online Simulink model implementing the dynamics of the tank cascade process.
+The project is organized into the following modules:
 
-* **`DT.slx`**
-    * The offline Simulink model implementing the dynamics of the tank cascade process.
+### `01_PLC_Control`
+Contains the source code for the industrial controller (IDEC FC6A) managing the physical rig and communication.
+* **`PLC_Project_File`**: The original ladder logic project file implementing data acquisition, scaling, and Modbus TCP/IP communication server.
+* **`Modbus_Register_Map.pdf`**: Documentation of the memory map used for data exchange between the physical PLC and the Digital Twin.
 
-* **`DT_app.mlapp`**
-    * A MATLAB App Designer application that serves as the HMI (Human-Machine Interface) for visualization and control. It allows for real-time interaction with the Digital Twin.
+### `02_Matlab_Simulink`
+The core simulation models.
+* **`DT_online.slx`**: real-time Digital Twin model with Modbus TCP/IP blocks for bi-directional synchronization with the physical plant.
+* **`DT_offline.slx`**: standalone simulation model for offline testing and algorithm development.
+* **`macierze_do_modelu.mat`**: data file containing initialization parameters, state-space matrices, and physical constants required for the simulations.
 
-* **`macierze_do_modelu.mat`**
-    * A `.mat` data file containing matrices (likely state-space matrices or other pre-defined parameters) required to correctly run the `DT.slx` simulation.
+### `03_Analysis_Scripts`
+MATLAB scripts demonstrating the mathematical rigor of the project (Identification & Validation).
+* **`identyfikacjaParametrow.m`**: implementation of the **Grey-box identification** method based on Torricelli's law. It uses the Trust Region Reflective algorithm to minimize the cost function (eq. 2.2 in the thesis).
+* **`analizaStatystycznaBledow.m`**: script performing statistical validation of the model. It generates error histograms, fits normal distribution curves, and calculates **kurtosis** to demonstrate the non-Gaussian nature of measurement errors (quantization error dominance).
+* **`analizaHisterezy.m`**: data processing script used to separate opening/closing cycles for valve R2, compensating for mechanical hysteresis.
 
-* **`identyfikacjaParametrow.m`**
-    * A MATLAB script that performs the parameter identification process. It implements the minimization of a cost function (described in the thesis as equation 2.2) to fit the model parameters to measurement data.
+### `04_HMI_Visualization`
+* **`DT_app.mlapp`**: a MATLAB App Designer application serving as the Human-Machine Interface. It provides real-time visualization of the process state and allows for control mode switching (Monitor/Control).
 
 ## ⚙️ Requirements
 
