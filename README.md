@@ -20,7 +20,7 @@ The project is organized into the following modules:
 
 ### `01_PLC_control`
 Contains the source code for the industrial controller (IDEC FC6A) managing the physical rig and communication.
-* **`PLC_Project_File`**: The original ladder logic project file implementing data acquisition, scaling, and Modbus TCP/IP communication server.
+* **`identyfikacja.pjw`**: the original ladder logic project file implementing basic logic, scaling, and Modbus TCP/IP communication server.
 * **`Modbus_Register_Map.pdf`**: Documentation of the memory map used for data exchange between the physical PLC and the Digital Twin.
 
 ### `02_Matlab_Simulink`
