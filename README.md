@@ -31,9 +31,9 @@ The core simulation models.
 
 ### `03_analysis_scripts`
 MATLAB scripts demonstrating the mathematical rigor of the project (Identification & Validation).
-* **`identyfikacjaParametrow.m`**: implementation of the **Grey-box identification** method based on Torricelli's law. It uses the Trust Region Reflective algorithm to minimize the cost function (eq. 2.2 in the thesis).
-* **`analizaStatystycznaBledow.m`**: script performing statistical validation of the model. It generates error histograms, fits normal distribution curves, and calculates **kurtosis** to demonstrate the non-Gaussian nature of measurement errors (quantization error dominance).
-* **`analizaHisterezy.m`**: data processing script used to separate opening/closing cycles for valve R2, compensating for mechanical hysteresis.
+* **`identyfikacjaParametrow.m`**: TODO implementation of the **Grey-box identification** method based on Torricelli's law. It uses the Trust Region Reflective algorithm to minimize the cost function (eq. 2.2 in the thesis).
+* **`analizaStatystycznaBledow.m`**: TODO script performing statistical validation of the model. It generates error histograms, fits normal distribution curves, and calculates **kurtosis** to demonstrate the non-Gaussian nature of measurement errors (quantization error dominance).
+* **`synchronize_sigmnal.m`**: script synchronizing signals - both rising and falling edge ignoring earlier measurements.
 
 ### `04_HMI_visualization`
 * **`DT_app.mlapp`**: a MATLAB App Designer application serving as the Human-Machine Interface. It provides real-time visualization of the process state and allows for control mode switching (Monitor/Control).
