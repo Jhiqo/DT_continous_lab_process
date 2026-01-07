@@ -25,27 +25,27 @@ Contains the source code for the industrial controller (IDEC FC6A) managing the 
 
 ### `02_Matlab_Simulink`
 The core simulation models.
-* **`DT_online.slx`**: real-time Digital Twin model with Modbus TCP/IP blocks for bi-directional synchronization with the physical plant.
+* **`DT.slx`**: real-time Digital Twin model with Modbus TCP/IP blocks for bi-directional synchronization with the physical plant.
 * **`DT_offline.slx`**: standalone simulation model for offline testing and algorithm development.
 * **`macierze_do_modelu.mat`**: data file containing initialization parameters, state-space matrices, and physical constants required for the simulations.
+* **`main_pid_optimizer.m`**: PID tuning function using Nelder-Mead algorithm.
 
 ### `03_analysis_scripts`
 MATLAB scripts demonstrating the mathematical rigor of the project (Identification & Validation).
-* **`identyfikacjaParametrow.m`**: TODO implementation of the **Grey-box identification** method based on Torricelli's law. It uses the Trust Region Reflective algorithm to minimize the cost function (eq. 2.2 in the thesis).
-* **`analizaStatystycznaBledow.m`**: TODO script performing statistical validation of the model. It generates error histograms, fits normal distribution curves, and calculates **kurtosis** to demonstrate the non-Gaussian nature of measurement errors (quantization error dominance).
 * **`synchronize_sigmnal.m`**: script synchronizing signals - both rising and falling edge ignoring earlier measurements.
 
 ### `04_HMI_visualization`
 * **`DT_app.mlapp`**: a MATLAB App Designer application serving as the Human-Machine Interface. It provides real-time visualization of the process state and allows for control mode switching (Monitor/Control).
+* **`DT_app_offline.mlapp`**: HMI for the offline model. 
 
 ## ⚙️ Requirements
 
 The following software is required to run this project:
-* **Matlab 2025b** (or newer) - for an online version
-* **Matlab 2024a** (or newer) - for an offline version
+* **Matlab 2025b** (or newer) - for the online version
+* **Matlab 2024a** (or newer) - for the offline version
 * **Simulink**
 * **Simulink Desktop Real-Time**
-* **Simulink Industrial Communication**
+* **Simulink Industrial Communication** - for the online version.
 
 ## 🚀 Getting Started
 
@@ -54,7 +54,6 @@ The following software is required to run this project:
 3.  Ensure all required Toolboxes from the `Requirements` section are installed.
 4.  Make sure the project folder (including the `.mat` file) is added to the MATLAB path.
 5.  To launch the user interface, open and run the **`DT_app.mlapp`** application.
-6.  To analyze the identification process, open and run the **`identyfikacjaParametrow.m`** script.
 
 ## 🎓 Academic Context
 
